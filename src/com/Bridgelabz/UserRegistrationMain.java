@@ -14,8 +14,19 @@ public class UserRegistrationMain {
             System.out.println("Invalid");
     }
 
+    void lastName() {
+        String lastName = "Bhaskaran";
+        Matcher matcher = NAME_PATTERN.matcher(lastName);
+        if(matcher.matches()){
+            System.out.println("The LastName is Valid");
+        }
+        else
+            System.out.println("Invalid");
+    }
+
     public static void main(String[] args) {
         UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
         userRegistrationMain.firstName();
+        userRegistrationMain.lastName();
     }
 }
