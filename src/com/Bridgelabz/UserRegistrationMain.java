@@ -69,6 +69,18 @@ public class UserRegistrationMain {
         else
             System.out.println("Password doesn't match the requirement");
     }
+
+    static Pattern PASSWORD3_PATTERN = Pattern.compile( "^[a-zA-Z0-9]{8,}$");
+    void passwordRule3(){
+        String password_3 = "abcdEfg1";
+        System.out.println("Password should have atleast one number");
+        Matcher matcher = PASSWORD3_PATTERN.matcher(password_3);
+        if (matcher.matches()){
+            System.out.println("Password is correctly matches to the rule3");
+        }
+        else
+            System.out.println("Password doesn't match the requirement");
+    }
     public static void main(String[] args) {
         UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
 //        userRegistrationMain.firstName();
@@ -76,7 +88,8 @@ public class UserRegistrationMain {
 //        userRegistrationMain.email();
 //        userRegistrationMain.phoneNumber();
 //        userRegistrationMain.passwordRule1();
-          userRegistrationMain.passwordRule2();
+//        userRegistrationMain.passwordRule2();
+        userRegistrationMain.passwordRule3();
     }
 }
 
