@@ -23,10 +23,24 @@ public class UserRegistrationMain {
         else
             System.out.println("Invalid");
     }
-
+    static Pattern EMAIL_PATTERN = Pattern.compile("^[A-Z a-z 0-9]+([.][A-Za-z0-9]+)@([a-z]+[.][a-z]{2,3})+([.][a-z]+)$");
+//abc.xyz@bl.co.in
+    void email() {
+        String email = "abc.xyz@bl.com.in";
+        Matcher matcher = EMAIL_PATTERN.matcher(email);
+        if (matcher.matches()){
+            System.out.println("The Email id is valid ");
+        }
+        else
+            System.out.println("Invalid email id ");
+    }
     public static void main(String[] args) {
         UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
         userRegistrationMain.firstName();
         userRegistrationMain.lastName();
+        userRegistrationMain.email();
+
     }
-}
+
+    }
+
