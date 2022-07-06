@@ -46,12 +46,25 @@ public class UserRegistrationMain {
         else
             System.out.println("Phone number is not valid");
     }
+
+    static Pattern PASSWORD1_PATTERN = Pattern.compile("^[a-z]{8}$");
+    void passwordRule1(){
+        String password_1 = "abcdefgh";
+        Matcher matcher = PASSWORD1_PATTERN.matcher(password_1);
+        if (matcher.matches()){
+            System.out.println("Password is correctly matches to the rule");
+        }
+        else
+            System.out.println("Password doesn't match the requirement");
+    }
+
     public static void main(String[] args) {
         UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
-        userRegistrationMain.firstName();
-        userRegistrationMain.lastName();
-        userRegistrationMain.email();
-        userRegistrationMain.phoneNumber();
+//        userRegistrationMain.firstName();
+//        userRegistrationMain.lastName();
+//        userRegistrationMain.email();
+//        userRegistrationMain.phoneNumber();
+        userRegistrationMain.passwordRule1();
     }
 }
 
