@@ -58,13 +58,25 @@ public class UserRegistrationMain {
             System.out.println("Password doesn't match the requirement");
     }
 
+    static Pattern PASSWORD2_PATTERN = Pattern.compile( "^[a-zA-Z]{8}$");
+    void passwordRule2(){
+        String password_2 = "abcdEfgh";
+        System.out.println("Password should have atleast one UPPERCASE");
+        Matcher matcher = PASSWORD2_PATTERN.matcher(password_2);
+        if (matcher.matches()){
+            System.out.println("Password is correctly matches to the rule2");
+        }
+        else
+            System.out.println("Password doesn't match the requirement");
+    }
     public static void main(String[] args) {
         UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
 //        userRegistrationMain.firstName();
 //        userRegistrationMain.lastName();
 //        userRegistrationMain.email();
 //        userRegistrationMain.phoneNumber();
-        userRegistrationMain.passwordRule1();
+//        userRegistrationMain.passwordRule1();
+          userRegistrationMain.passwordRule2();
     }
 }
 
