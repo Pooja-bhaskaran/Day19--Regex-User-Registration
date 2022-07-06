@@ -81,6 +81,18 @@ public class UserRegistrationMain {
         else
             System.out.println("Password doesn't match the requirement");
     }
+
+    static Pattern PASSWORD4_PATTERN = Pattern.compile("^(?=.*[0-9])"+"(?=.*[a-z])(?=.*[A-Z])"+"(?=.*[@#$%^&+=])"+"(?=\\S+$).{8,}$");
+    void passwordRule4(){
+        String password_4 = "abcdEfg@1";
+        System.out.println("Password should have atleast one Special Character");
+        Matcher matcher = PASSWORD4_PATTERN.matcher(password_4);
+        if (matcher.matches()){
+            System.out.println("Password is correctly matches to the rule4");
+        }
+        else
+            System.out.println("Password doesn't match the requirement");
+    }
     public static void main(String[] args) {
         UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
 //        userRegistrationMain.firstName();
@@ -89,7 +101,8 @@ public class UserRegistrationMain {
 //        userRegistrationMain.phoneNumber();
 //        userRegistrationMain.passwordRule1();
 //        userRegistrationMain.passwordRule2();
-        userRegistrationMain.passwordRule3();
+//        userRegistrationMain.passwordRule3();
+        userRegistrationMain.passwordRule4();
     }
 }
 
