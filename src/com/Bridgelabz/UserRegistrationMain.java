@@ -34,13 +34,24 @@ public class UserRegistrationMain {
         else
             System.out.println("Invalid email id ");
     }
+
+    static Pattern PHONENUMBER_PATTERN = Pattern.compile("^([1-9]{1,2}[ ])+([6-9]{1}[0-9]{9})$");
+
+    void phoneNumber(){
+        String phoneNumber = "91 9919819801";
+        Matcher matcher = PHONENUMBER_PATTERN.matcher(phoneNumber);
+        if (matcher.matches()){
+            System.out.println("Phone number is valid ");
+        }
+        else
+            System.out.println("Phone number is not valid");
+    }
     public static void main(String[] args) {
         UserRegistrationMain userRegistrationMain = new UserRegistrationMain();
         userRegistrationMain.firstName();
         userRegistrationMain.lastName();
         userRegistrationMain.email();
-
+        userRegistrationMain.phoneNumber();
     }
-
-    }
+}
 
